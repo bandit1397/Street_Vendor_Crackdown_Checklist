@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+
+
+<html lang="ko">
+
+
+
+<head>
+
+
+
+  <meta charset="UTF-8">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <title>노점상 단속 법령 체크리스트</title>
+
+
+
+  <style>
+
+
+
+    body {
+
+
+
+      font-family: sans-serif;
+
+
+
+      padding: 1rem;
+
+
+
+      background: #f4f4f4;
+
+
+
+    }
+
+
+
+    h1 {
+
+
+
+      text-align: center;
+
+
+
+    }
+
+
+
+    h2 {
+
+
+
+      margin-top: 2rem;
+
+
+
+      color: #333;
+
+
+
+    }
+
+
+
+    label {
+
+
+
+      display: block;
+
+
+
+      margin: 0.5rem 0;
+
+
+
+      cursor: pointer;
+
+
+
+    }
+
+
+
+    .law-box {
+
+
+
+      background: #fff;
+
+
+
+      border-left: 4px solid #007BFF;
+
+
+
+      margin: 1rem 0;
+
+
+
+      padding: 1rem;
+
+
+
+      display: none;
+
+
+
+    }
+
+
+
+    .law-box h3 {
+
+
+
+      margin-top: 0;
+
+
+
+      color: #007BFF;
+
+
+
+    }
+
+
+
+    mark {
+
+
+
+      background: #ffe08a;
+
+
+
+    }
+
+
+
+  </style>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+
+
+  <h1>노점상 단속 법령 체크리스트</h1>
+
+
+
+  <p>각 항목을 체크하면 관련 법령 요약이 표시됩니다.</p>
+
+
+
+
+
+
+
+  <form>
+
+
+
+    <h2>① 장소적 규제(도로 관련법)</h2>
+
+
+
+    <label><input type="checkbox" onclick="toggleLaw('law1')"> 도로 불법 점용 (도로법)<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 도로점용허가 없이 도로를 점용<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 단순 점용 자체가 위법요소이기 때문에 교통 방해 여부와 무관하게 단속 가능<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 노상에서 반복적으로 영업행위를 하는 경우, 짧은 시간이라도 도로법상 점용에 해당<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 일시 적치: 운반 도중 짧은 시간 동안 물건을 임시로 올려두는 정도. 상행위와 직접 연결되지 않음<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 사례: 보도에서 과일, 옷 장사/차도에 차량을 세우고 사과, 옥수수 등을 트렁크에서 꺼내 판매 
+
+
+
+    </label>
+
+
+
+    <label><input type="checkbox" onclick="toggleLaw('law2')"> 정차/주차 위반 (도로교통법)</label>
+
+
+
+    <label><input type="checkbox" onclick="toggleLaw('law3')"> 불법적치물 (도로교통법)<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– <mark>교통에 방해가 될 만한 물건</mark>을 도로에 함부로 내버려 두는 행위<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 도로는 차도뿐만 아니라 보도(인도)도 포함<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 핵심은 교통에 지장을 주는 경우 즉 그렇지 아니할 경우 다른 단속 법규 고려
+
+
+
+    </label>
+
+
+
+
+
+
+
+    <h2>② 상행위 자체 규제(식품위생법 등)</h2>
+
+
+
+    <label><input type="checkbox" onclick="toggleLaw('law4')"> 영업신고 미이행 (식품위생법)<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 휴게음식점, 일반음식점 등은 사전 영업신고 대상 업종이다<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 사전 신고 위반<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex) 1톤 트럭에서 닭강정 조리 판매, 떡복기 판매<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 사전신고 예외(자유업)<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ex) 가공하지 않은 농산물(과일, 채소 등) 판매<br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;– 사전신고 예외 식품 판매 노점 단속시 기타 법률 고려(사업자등록 여부)
+
+
+
+    </label>
+
+
+
+
+
+
+
+
+
+
+
+    <h2>③ 상행위 부수물 규제(쓰레기, 대기 등)</h2>
+
+
+
+    <label><input type="checkbox" onclick="toggleLaw('law5')"> 쓰레기 방치 (폐기물관리법)</label>
+
+
+
+  </form>
+
+
+
+
+
+
+
+  <!-- 관련 법령 설명 박스 -->
+
+
+
+  <div id="law1" class="law-box">
+
+
+
+    <h3>도로법 제61조(도로점용허가), 도로법 114조 제6호, 117조</h3>
+
+
+
+    <p> <strong> 허가 없이 점용 시</strong> <mark>2년 이하 징역 또는 2천만원 이하 벌금</mark></p>
+
+
+
+    <p> <strong> 일시 적치 시</strong> <mark>300만원 이하 과태료</mark></p>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <div id="law2" class="law-box">
+
+
+
+    <h3>도로교통법 제32조(주정차 금지 위반)</h3>
+
+
+
+    <p><mark>통고처분 or 과태료</mark></p>
+
+
+
+    <h3>도로교통법 제33조(주차 금지 위반)</h3>
+
+
+
+    <p><mark>통고처분 or 과태료</mark></p>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <div id="law3" class="law-box">
+
+
+
+    <h3>도로교통법 제68조제2항</h3>
+
+
+
+    <p><strong>제152조:</strong><mark>1년 이하 징역</mark> 또는 <mark>300만원 이하 벌금</mark></p>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <div id="law4" class="law-box">
+
+
+
+    <h3>식품위생법 제37조(영업허가 등), 제94호 제1항 제3호, 제97조 제1호</h3>
+
+
+
+    <p><strong>미허가 영업</strong><mark> 10년 이하의 징역</mark> 또는<mark> 1억원 이하의 벌금</mark></p>
+
+    <p><strong>미신고 영업</strong><mark> 3년 이하의 징역</mark> 또는<mark> 3천만원 이하의 벌금/<mark></p>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <div id="law5" class="law-box">
+
+
+
+    <h3>폐기물관리법 제8조(폐기물의 투기 금지 등), 제68조 제3항 제1호</h3>
+
+
+
+    <p><strong>생활폐기물을 버리거나 매립 또는 소각</strong><mark> 100만원 이하의 과태료</mark></p>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <script>
+
+
+
+    function toggleLaw(id) {
+
+
+
+      const el = document.getElementById(id);
+
+
+
+      el.style.display = el.style.display === "block" ? "none" : "block";
+
+
+
+    }
+
+
+
+  </script>
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
